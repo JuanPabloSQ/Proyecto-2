@@ -37,22 +37,17 @@ const addDeleteToDo = (itemList) => {
 
 const updateTodo = (itemList) => {
   const updateButton = document.createElement("button");
-  updateButton.textContent = "Actualizar"
-  const editTextInput = document.createElement("Input");
-  editTextInput.type = "text";    
+  updateButton.textContent = "Actualizar"   
   updateButton.addEventListener("click", () =>{
-    const updatedValue = editTextInput.value;
+    const updatedValue = toDo.value;
     itemList.textContent = updatedValue;
     addDeleteToDo(itemList)
     updateTodo(itemList)
   });
-  itemList.appendChild(editTextInput);
   itemList.appendChild(updateButton);
 };
 
-//funcion enviar informacion
-//funcion borrar
-//toDoTotal = toDoArray.map(a => "<li>" + a + "</li>")
+
 
 const addToDo = () =>{
     const toDoValue = toDo.value
