@@ -1,14 +1,15 @@
 body {
-    background-color: rgb(105, 234, 230);
+    background: linear-gradient(to right, rgb(105, 234, 230), rgb(68, 166, 223));
     margin: 0; 
     padding: 0;
+    background-size: cover;
 }
 .ToDoList{
     color:black
 }
 .header{
-    background-color: blueviolet;
-    color: white; 
+    background-color:rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 20px;
     text-align: center; 
 }
