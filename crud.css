@@ -15,4 +15,20 @@ body {
 }
 .ToDoList{
     background-color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding-bottom: 100px;
+    margin: 70px 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+#toDo{
+
+}
+.ToDoListInput{
+
+}
+#toDolist{
+    padding-bottom: 250px;
 }
