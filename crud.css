@@ -3,6 +3,7 @@ body {
     margin: 0; 
     padding: 0;
     background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .ToDoList{
     color:black
@@ -28,6 +29,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .ButtonEnviar{
     padding: 10px 15px;
@@ -45,36 +47,49 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-right: 5px;
-    margin-bottom: 5px;
-  }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .ButtonEliminar:hover {
+.ButtonEliminar:hover {
     background-color: #bd2130; 
-  }
+}
 
-  .ButtonActualizar {
+.ButtonActualizar {
     padding: 8px 12px;
     background-color: #28a745; 
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .ButtonActualizar:hover {
+.ButtonActualizar:hover {
     background-color: #218838; 
-  }
+}
 
 #toDolist{
     padding-bottom: 250px;
     list-style-type: none;
     margin: 10px;
 }
-#toDolist il{
-    margin: 30px;
-}
+
 .list-item-container{
     display: flex;
     justify-content: space-between;
     margin-left: -30px;
+    padding: 5px;
+    border-bottom: 1px solid #ddd; 
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+
+  .list-item-container:hover {
+    background-color: #f2f2f2;
+  }
+
+  .list-item-container button {
+    font-size: 12px;
 }
