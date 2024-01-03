@@ -41,6 +41,7 @@ const renderToDo = () => {
       const updatedValue = toDo.value;
       ToDoArray[index] = updatedValue;
       itemList.textContent = updatedValue;
+      toDo.value = '';
     });
 
     
@@ -53,4 +54,5 @@ const renderToDo = () => {
 
     toDoList.appendChild(container);
   });
+  toDo.value = '';
 };
