@@ -12,54 +12,45 @@ const ToDoArray = []
 
 
 const renderToDo = () => {
-  const ToDoArray = [];
-  const toDoList = document.getElementById("toDolist");
-  const toDo = document.getElementById("toDo");
   const toDoValue = toDo.value;
   ToDoArray.push(toDoValue);
-  ToDoArray.map((item) => {
+
+  toDoList.innerHTML = '';
+
+  ToDoArray.forEach((item, index) => {
+    const container = document.createElement("div");
+    container.className = "list-item-container";
+
     const itemList = document.createElement("li");
-    itemList.textContent = item
-    addDeleteToDo(itemList);
-    updateTodo(itemList);
-    toDoList.appendChild(itemList);
-  });
-};
+    itemList.textContent = item;
 
-const addDeleteToDo = (itemList) => {
-  const deleteButton = document.createElement("button");
-  deleteButton.appendChild(document.createTextNode("Eliminar"));
-  deleteButton.addEventListener("click", () => {
-    toDoList.removeChild(itemList);
-  });
-  itemList.appendChild(deleteButton);
-};
+    const buttonContainer = document.createElement("div");
 
-const updateTodo = (itemList) => {
-  const updateButton = document.createElement("button");
-  updateButton.textContent = "Actualizar"   
-  updateButton.addEventListener("click", () =>{
-    const updatedValue = toDo.value;
-    itemList.textContent = updatedValue;
-    addDeleteToDo(itemList)
-    updateTodo(itemList)
-  });
-  itemList.appendChild(updateButton);
-};
-
-
-
-const addToDo = () =>{
-    const toDoValue = toDo.value
-    const toDoList = document.getElementById("toDolist");
-    const itemList = document.createElement("li");
-    itemList.appendChild(document.createTextNode(toDoValue));
-    toDoList.appendChild(itemList);
     const deleteButton = document.createElement("button");
+    deleteButton.className = "ButtonEliminar";
     deleteButton.appendChild(document.createTextNode("Eliminar"));
     deleteButton.addEventListener("click", () => {
-      toDoList.removeChild(itemList);
+      ToDoArray.splice(index, 1);
+      toDoList.removeChild(container);
     });
-    itemList.appendChild(deleteButton);
-    toDoList.appendChild(itemList);
-}
+
+    const updateButton = document.createElement("button");
+    updateButton.className = "ButtonActualizar";
+    updateButton.textContent = "Actualizar";
+    updateButton.addEventListener("click", () => {
+      const updatedValue = toDo.value;
+      ToDoArray[index] = updatedValue;
+      itemList.textContent = updatedValue;
+    });
+
+    
+    buttonContainer.appendChild(deleteButton);
+    buttonContainer.appendChild(updateButton);
+
+    
+    container.appendChild(itemList);
+    container.appendChild(buttonContainer);
+
+    toDoList.appendChild(container);
+  });
+};
