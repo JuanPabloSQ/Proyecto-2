@@ -1,19 +1,17 @@
-const toDoList = document.getElementById("toDolist")
+const toDoList = document.getElementById("toDolist");
+const toDo = document.getElementById("toDo");
 
-const toDo= document.getElementById("toDo")
 
-const toDoValue = toDo.value
-
-const itemList = document.createElement("li")
-
-itemList.textContent = toDo.value
-
-const ToDoArray = []
-
+const storedToDoList = localStorage.getItem("toDoList");
+const ToDoArray = storedToDoList ? JSON.parse(storedToDoList) : [];
 
 const renderToDo = () => {
-  const toDoValue = toDo.value;
-  ToDoArray.push(toDoValue);
+  const toDoValue = toDo.value.trim(); 
+
+  if (toDoValue !== '') {
+    ToDoArray.push(toDoValue);
+    localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
+  }
 
   toDoList.innerHTML = '';
 
@@ -31,6 +29,7 @@ const renderToDo = () => {
     deleteButton.appendChild(document.createTextNode("Eliminar"));
     deleteButton.addEventListener("click", () => {
       ToDoArray.splice(index, 1);
+      localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
       toDoList.removeChild(container);
     });
 
@@ -42,13 +41,12 @@ const renderToDo = () => {
       ToDoArray[index] = updatedValue;
       itemList.textContent = updatedValue;
       toDo.value = '';
+      localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
     });
 
-    
     buttonContainer.appendChild(deleteButton);
     buttonContainer.appendChild(updateButton);
 
-    
     container.appendChild(itemList);
     container.appendChild(buttonContainer);
 
@@ -56,3 +54,4 @@ const renderToDo = () => {
   });
   toDo.value = '';
 };
+renderToDo();

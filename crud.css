@@ -5,14 +5,16 @@ body {
     background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.ToDoList{
-    color:black
-}
+
 .header{
-    background-color:rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    padding: 20px;
-    text-align: center; 
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.header h1 {
+    margin: 0;
+    font-size: 1.5em;
 }
 .ToDoList{
     background-color: white;
@@ -20,7 +22,9 @@ body {
     flex-direction: column; 
     align-items: center;
     padding-bottom: 100px;
-    margin: 70px 400px;
+    margin: 30px 400px;
+    margin-bottom: 50px;
+    color:black
 }
 #toDo{
     width: 400px;
@@ -92,4 +96,13 @@ body {
 
   .list-item-container button {
     font-size: 12px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
