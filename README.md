@@ -15,7 +15,7 @@ En la parte inferior de la página, se incluye el número de proyecto y el nombr
     git clone https://github.com/JuanPabloSQ/Proyecto-2
     ```
 
-2. **Entrar a la carpeta Proyecto-1 y ejecutar el archivo index.html**
+2. **Entrar a la carpeta Proyecto-2 y ejecutar el archivo index.html**
 
 
 ## Tecnologias utilizadas
