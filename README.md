@@ -1,4 +1,4 @@
-# De Guitar Store
+# De "Planificador de Actividades"
 
 
 ## Descripción
