@@ -6,6 +6,7 @@ const ToDoArray = storedToDoList ? JSON.parse(storedToDoList) : [];
 
 const renderToDo = () => {
 
+
   toDoList.innerHTML = '';
 
   ToDoArray.forEach((item, index) => {
@@ -31,9 +32,11 @@ const renderToDo = () => {
     updateButton.textContent = "Actualizar";
     updateButton.addEventListener("click", () => {
       const updatedValue = toDo.value.trim();
-      ToDoArray[index] = updatedValue;
-      toDo.value = '';
-      localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
+      if (updatedValue !== '') {
+        ToDoArray[index] = updatedValue;
+        toDo.value = '';
+        localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
+      }
       renderToDo();
     });
 

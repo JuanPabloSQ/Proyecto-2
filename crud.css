@@ -116,7 +116,6 @@ footer {
   
     #toDo {
       width: 230px;
-      margin-left: 20px; 
       margin-bottom: 20px;
 
     }
@@ -136,7 +135,6 @@ footer {
         padding: 5px 5px;
     }
     .list-item-container{
-        margin-right: 15px;
         max-width: 320px;
         height: 30px;
     }
