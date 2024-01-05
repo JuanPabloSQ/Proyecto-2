@@ -1,17 +1,10 @@
 const toDoList = document.getElementById("toDolist");
 const toDo = document.getElementById("toDo");
 
-
 const storedToDoList = localStorage.getItem("toDoList");
 const ToDoArray = storedToDoList ? JSON.parse(storedToDoList) : [];
 
 const renderToDo = () => {
-  const toDoValue = toDo.value.trim(); 
-
-  if (toDoValue !== '') {
-    ToDoArray.push(toDoValue);
-    localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
-  }
 
   toDoList.innerHTML = '';
 
@@ -30,18 +23,18 @@ const renderToDo = () => {
     deleteButton.addEventListener("click", () => {
       ToDoArray.splice(index, 1);
       localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
-      toDoList.removeChild(container);
+      renderToDo();
     });
 
     const updateButton = document.createElement("button");
     updateButton.className = "ButtonActualizar";
     updateButton.textContent = "Actualizar";
     updateButton.addEventListener("click", () => {
-      const updatedValue = toDo.value;
+      const updatedValue = toDo.value.trim();
       ToDoArray[index] = updatedValue;
-      itemList.textContent = updatedValue;
       toDo.value = '';
       localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
+      renderToDo();
     });
 
     buttonContainer.appendChild(deleteButton);
@@ -52,6 +45,16 @@ const renderToDo = () => {
 
     toDoList.appendChild(container);
   });
-  toDo.value = '';
+
 };
 renderToDo();
+
+const addToDo = () => {
+  const toDoValue = toDo.value.trim();
+
+  if (toDoValue !== '') {
+    ToDoArray.push(toDoValue);
+    localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
+  }
+  renderToDo();
+};

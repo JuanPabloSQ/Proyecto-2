@@ -76,12 +76,13 @@ body {
     padding-bottom: 250px;
     list-style-type: none;
     margin: 10px;
+    padding-left: 0px;
 }
 
 .list-item-container{
     display: flex;
     justify-content: space-between;
-    margin-left: -30px;
+    margin-left: 0px;  /*-30*/
     padding: 5px;
     border-bottom: 1px solid #ddd; 
     align-items: center;
@@ -105,4 +106,39 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}   
+
+
+@media only screen and (max-width: 600px) {
+    .ToDoList {
+      margin: 10px;
+    }
+  
+    #toDo {
+      width: 230px;
+      margin-left: 20px; 
+      margin-bottom: 20px;
+
+    }
+    .ButtonEnviar{
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    .ButtonActualizar{
+        padding: 5px 5px;
+    }
+    .ButtonEliminar {
+        padding: 5px 5px;
+    }
+    .list-item-container{
+        margin-right: 15px;
+        max-width: 320px;
+        height: 30px;
+    }
+
 }
