@@ -58,6 +58,7 @@ const addToDo = () => {
   if (toDoValue !== '') {
     ToDoArray.push(toDoValue);
     localStorage.setItem("toDoList", JSON.stringify(ToDoArray));
+    toDo.value = '';
   }
   renderToDo();
 };
